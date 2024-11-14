@@ -1,5 +1,5 @@
 #include <iostream>
-using Namespace std;
+using namespace std;
 
 struct Student {
     long long NISN;
