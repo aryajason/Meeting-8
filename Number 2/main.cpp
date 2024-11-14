@@ -10,8 +10,6 @@ struct Student {
 };
 
 int main() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr);
 
     Student data[7] = {
         {9950310962, "Ronaldo Valentino Uneputty", 80},
