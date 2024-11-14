@@ -4,14 +4,14 @@
 using namespace std;
 
 struct Student {
-    long long nisn; // Use long long for large NISN values
-    string name;
-    int value;
+    long long NISN; // Use long long for large NISN Values
+    string Name;
+    int Value;
 };
 
 int main() {
 
-    Student data[7] = {
+    Student Data[7] = {
         {9950310962, "Ronaldo Valentino Uneputty", 80},
         {9952382180, "Ari Lutfianto", 65},
         {9960312699, "Handi Ramadhan", 90},
@@ -19,7 +19,7 @@ int main() {
         {9965653989, "Arief Budiman", 60},
         {9970272750, "Achmad Yaumil Fadjri R.", 60},
         {9970293945, "Alivia Rahma Pramesti", 70}
-    }; // Assume data is already sorted by NISN
+    }; // Assume Data is already sorted by NISN
 
     long long targetNISN = 9950310962; // The NISN we are searching for
     int l = 0;
@@ -29,13 +29,15 @@ int main() {
 
     while (!found && l <= r) {
         int mid = (l + r) / 2;
-        if (data[mid].nisn > targetNISN) {
+        if (Data[mid].NISN > targetNISN) {
             r = mid - 1;
-        } else if (data[mid].nisn < targetNISN) {
+        } 
+        else if (Data[mid].NISN < targetNISN) {
             l = mid + 1;
-        } else {
+        } 
+        else {
             found = true;
-            ans = data[mid].value;
+            ans = Data[mid].Value;
         }
     }
 
