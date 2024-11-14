@@ -38,7 +38,7 @@ int main() {
         } 
         else {
             found = true;
-            pos = mid + 1
+            pos = mid + 1 ;
             ans = Data[mid].Value;
         }
     }
