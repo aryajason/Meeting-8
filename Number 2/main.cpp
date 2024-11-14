@@ -47,6 +47,4 @@ int main() {
     } else {
         cout << "Not found" << '\n';
     }
-
-    return 0;
 }
