@@ -104,5 +104,65 @@ int main() {
     }
 
     cout << '\n';
- 
+    
+    // value sorting
+    // insertion method
+    
+ for (int i = 1; i < DataSize; i++) {
+        int j = i - 1;
+        long long tempNISN = Data[i].NISN;
+        string tempName = Data[i].Name;
+        int tempValue = Data[i].Value;
+        while (j >= 0 && Data[j].Value < tempValue) {
+            Data[j + 1].NISN = Data[j].NISN;
+            Data[j + 1].Name = Data[j].Name;
+            Data[j + 1].Value = Data[j].Value;
+            j--;
+        }
+        Data[j + 1].NISN = tempNISN;
+        Data[j + 1].Name = tempName;
+        Data[j + 1].Value = tempValue;
+    }
+
+    cout << "Value Insertion Method" << '\n';
+    for (int i = 0; i < DataSize; i++) {
+        cout << Data[i].NISN << ' ' << Data[i].Name << ' ' << Data[i].Value << '\n';
+    }
+
+    cout << '\n';
+
+    // Selection Sort (descending)
+    for (int i = 0; i < DataSize; i++) {
+        int indMax = i;
+        for (int j = i + 1; j < DataSize; j++) {
+            if (Data[j].Value > Data[indMax].Value) {
+                indMax = j;
+            }
+        }
+        // Swap the found maximum element with the first element
+        if (indMax != i) {
+            swap(Data[i], Data[indMax]);
+        }
+    }
+
+    cout << "Value Selection Method" << '\n';
+    for (int i = 0; i < DataSize; i++) {
+        cout << Data[i].NISN << ' ' << Data[i].Name << ' ' << Data[i].Value << '\n';
+    }
+
+    cout << '\n';
+
+    // Bubble Sort (descending)
+    for (int i = 0; i < DataSize - 1; i++) {
+        for (int j = 0; j < DataSize - 1 - i; j++) { // Optimize by reducing the range
+            if (Data[j].Value < Data[j + 1].Value) {
+                swap(Data[j], Data[j + 1]);
+            }
+        }
+    }
+
+    cout << "Value Bubble Method" << '\n';
+    for (int i = 0; i < DataSize; i++) {
+        cout << Data[i].NISN << ' ' << Data[i].Name << ' ' << Data[i].Value << '\n';
+    }
 }
