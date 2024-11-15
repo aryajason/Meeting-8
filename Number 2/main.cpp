@@ -10,7 +10,7 @@ struct Student {
 };
 
 int main() {
-
+// Define a structure named Student to store student information
     Student Data[7] = {
         {9950310962, "Ronaldo Valentino Uneputty", 80},
         {9952382180, "Ari Lutfianto", 65},
@@ -24,9 +24,10 @@ int main() {
     long long targetNISN = 9950310962; // The NISN we are searching for
     int l = 0;
     int r = 6; // Last index of the array
-    bool found = false;
-    int ans = 0;
+    bool found = false; // Flag to indicate whether the target NISN is found
+    int ans = 0; // Variable to store the Value of the found student
 
+// Perform binary search
     while (!found && l <= r) {
         int mid = (l + r) / 2;
         if (Data[mid].NISN > targetNISN) {
@@ -40,7 +41,7 @@ int main() {
             ans = Data[mid].Value;
         }
     }
-
+// Display the result
     if (found) {
         cout << "Found" << '\n';
         cout << "Value of " << targetNISN << " : " << ans << '\n';
