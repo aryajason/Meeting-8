@@ -21,19 +21,19 @@ int main() {
         {9970293945, "Alivia Rahma Pramesti", 70}
     }; // Assume Data is already sorted by NISN
 
-    long long targetNISN = 9950310962; // The NISN we are searching for
+    long long TargetNISN = 9950310962; // The NISN we are searching for
     int l = 0;
     int r = 6; // Last index of the array
-    bool found = false; // Flag to indicate whether the target NISN is found
+    bool found = false; // Flag to indicate whether the Target NISN is found
     int ans = 0; // Variable to store the Value of the found student
 
 // Perform binary search
     while (!found && l <= r) {
         int mid = (l + r) / 2;
-        if (Data[mid].NISN > targetNISN) {
+        if (Data[mid].NISN > TargetNISN) {
             r = mid - 1;
         } 
-        else if (Data[mid].NISN < targetNISN) {
+        else if (Data[mid].NISN < TargetNISN) {
             l = mid + 1;
         } 
         else {
@@ -44,7 +44,7 @@ int main() {
 // Display the result
     if (found) {
         cout << "Found" << '\n';
-        cout << "Value of " << targetNISN << " : " << ans << '\n';
+        cout << "Value of " << TargetNISN << " : " << ans << '\n';
     } else {
         cout << "Not found" << '\n';
     }
